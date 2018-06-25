@@ -10,6 +10,7 @@ public class GerritProperties {
     public String password;
     public String changeId;
     public String reviewerEmails;
+    public String namedServerUrl;
 
     public String getServerUrl() {
         return serverUrl;
@@ -49,5 +50,13 @@ public class GerritProperties {
 
     public void setReviewerEmails(String reviewerEmails) {
         this.reviewerEmails = reviewerEmails;
+    }
+
+    public String getNamedServerUrl() {
+        return namedServerUrl;
+    }
+
+    public void setNamedServerUrl(String namedServerUrl) {
+        this.namedServerUrl = namedServerUrl;
     }
 }

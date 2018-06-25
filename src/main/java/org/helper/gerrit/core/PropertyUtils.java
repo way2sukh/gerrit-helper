@@ -17,7 +17,7 @@ public final class PropertyUtils {
 
     public static GerritProperties loadProperties() throws IOException {
         ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
-        try (InputStream inputStream = classLoader.getResourceAsStream("gerrit.properties")) {
+        try (InputStream inputStream = classLoader.getResourceAsStream("properties/gerrit.properties")) {
             Properties properties = new Properties();
             properties.load(inputStream);
             return InstanceHolder.getObjectMapper().convertValue(properties,

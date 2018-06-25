@@ -100,10 +100,9 @@ public class GerritCommentsInfo {
                     comment.comment = oComment.message;
                     outputChange.unansweredComments.add(comment);
                 }
-
             }
         }
-        System.out.println(InstanceHolder.getObjectMapper().writeValueAsString(outputChange));
+        System.out.println(InstanceHolder.getObjectMapper().writeValueAsString(outputChange.unansweredComments));
     }
 
     private static CommentDetail getComment(CommentInfo comment) throws JsonProcessingException {
