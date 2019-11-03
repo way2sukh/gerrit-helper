@@ -8,9 +8,9 @@ import java.util.List;
  *
  */
 public class CommentDetail {
-    public Integer patchSet;
-    public Integer line;
-    public String message;
-    public String author;
-    public List<CommentDetail> next = new ArrayList<>();
+  public Integer patchSet;
+  public Integer line;
+  public String message;
+  public String author;
+  public List<CommentDetail> next = new ArrayList<>();
 }

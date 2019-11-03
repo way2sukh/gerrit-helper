@@ -10,7 +10,7 @@ import java.util.Map;
  *
  */
 public class ChangeCommentsInfo {
-    public Map<String, FileInfo> files = new HashMap<>();
-    public String subject;
-    public List<UnansweredCommentInfo> unansweredComments = new ArrayList<>();
+  public Map<String, FileInfo> files = new HashMap<>();
+  public String subject;
+  public List<UnansweredCommentInfo> unansweredComments = new ArrayList<>();
 }

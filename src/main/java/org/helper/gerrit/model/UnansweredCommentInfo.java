@@ -5,9 +5,9 @@ package org.helper.gerrit.model;
  *
  */
 public class UnansweredCommentInfo {
-    public String fileName;
-    public Integer patchSet;
-    public Integer line;
-    public String author;
-    public String comment;
+  public String fileName;
+  public Integer patchSet;
+  public Integer line;
+  public String author;
+  public String comment;
 }

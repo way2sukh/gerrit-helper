@@ -1,6 +1,3 @@
-/**
- * Copyright Stonewain Systems Inc.
- */
 package org.helper.gerrit.core;
 
 /**
@@ -8,10 +5,10 @@ package org.helper.gerrit.core;
  *
  */
 public class UtilityClassInstantiationException extends RuntimeException {
-    private static final long serialVersionUID = 2340550009692121440L;
-
-    public UtilityClassInstantiationException() {
-        super("Not meant to be initailzed");
-    }
-
+  private static final long serialVersionUID = 2340550009692121440L;
+  
+  public UtilityClassInstantiationException() {
+    super("Not meant to be initialized");
+  }
+  
 }

@@ -7,15 +7,15 @@ import com.fasterxml.jackson.databind.ObjectMapper;
  *
  */
 public final class InstanceHolder {
-
-    private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
-
-    private InstanceHolder() {
-        throw new UtilityClassInstantiationException();
-    }
-
-    public static ObjectMapper getObjectMapper() {
-        return OBJECT_MAPPER;
-    }
-
+  
+  private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
+  
+  private InstanceHolder() {
+    throw new UtilityClassInstantiationException();
+  }
+  
+  public static ObjectMapper getObjectMapper() {
+    return OBJECT_MAPPER;
+  }
+  
 }

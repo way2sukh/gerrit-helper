@@ -8,7 +8,7 @@ import java.util.List;
  *
  */
 public class FileInfo {
-    public String name;
-    public List<CommentDetail> unansweredComments = new ArrayList<>();
-    public List<CommentDetail> answeredComments = new ArrayList<>();
+  public String name;
+  public List<CommentDetail> unansweredComments = new ArrayList<>();
+  public List<CommentDetail> answeredComments = new ArrayList<>();
 }
