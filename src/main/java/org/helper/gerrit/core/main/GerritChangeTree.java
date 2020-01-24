@@ -18,30 +18,30 @@ import com.google.gerrit.extensions.restapi.RestApiException;
  *
  */
 public class GerritChangeTree {
-  
+
   public static void main(String[] args) throws IOException, RestApiException {
-    
+
     GerritProperties gerritProperties = PropertyUtils.loadProperties();
     GerritApi gerritApi = GerritApiUtils.login(gerritProperties);
-    
+
     CommitDetail detail = getCommitDetail(gerritApi, gerritProperties.changeId, gerritProperties);
-    
+
     System.out.println(InstanceHolder.getObjectMapper().writeValueAsString(detail));
   }
-  
+
   private static CommitDetail getCommitDetail(GerritApi gerritApi, String changeId,
       GerritProperties gerritProperties) throws RestApiException {
     CommitInfo commitInfo = gerritApi.changes().id(changeId).current().commit(true);
     ChangeInfo info = gerritApi.changes().id(changeId).info();
-    
+
     if (info.status != ChangeStatus.NEW || commitInfo.parents == null
         || commitInfo.parents.isEmpty()) {
       return null;
     }
-    
+
     CommitDetail detail =
         new CommitDetail(buildUrl(info._number, gerritProperties), commitInfo.subject);
-    
+
     if (commitInfo.parents != null && !commitInfo.parents.isEmpty()) {
       detail.parents = new ArrayList<>();
       for (CommitInfo current : commitInfo.parents) {
@@ -49,14 +49,14 @@ public class GerritChangeTree {
         if (parent != null) {
           detail.parents.add(parent);
         }
-        
+
       }
     }
     return detail;
   }
-  
+
   private static String buildUrl(int changeId, GerritProperties gerritProperties) {
     return gerritProperties.serverUrl + "/#/c/" + changeId;
   }
-  
+
 }
